@@ -20,7 +20,7 @@ const DateForm = (props: any) => {
   return (
     <form>
       <Form.Row>
-      <Col>
+      <Col md={3}>
       <Form.Label>From Date</Form.Label>
           <input
             style={commonStyle}
@@ -28,7 +28,7 @@ const DateForm = (props: any) => {
             value={props.fromDate}
             onChange={props.newFromDate} />
       </Col>
-      <Col>
+      <Col md={3}>
         <Form.Label>To Date</Form.Label>
           <input
             style={commonStyle}
@@ -36,10 +36,13 @@ const DateForm = (props: any) => {
             value={props.toDate}
             onChange={props.newToDate} />
       </Col>
-      <Col>
+      <Col md={4}>
         <Form.Group>
           <Form.Label>Currencies</Form.Label>
             <Select
+              value={props.currencySelected.map((currency: string)=>{
+                return { value: currency, label: currency }
+              })}
               style={commonStyle}
               styles={customStyles}
               isMulti
@@ -51,7 +54,7 @@ const DateForm = (props: any) => {
             />
         </Form.Group>
       </Col>
-      <Col>
+      <Col md={2}>
         <Form.Group>
           <Form.Label style={{fontSize: "2rem"}}>Show Buy Date</Form.Label>
           {/* <Form.Check type="checkbox" /> */}

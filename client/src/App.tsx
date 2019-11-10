@@ -100,6 +100,7 @@ const App: React.FC = () => {
               toDate={state.toDate}
               currencyList={state.currencyList}
               newCurrencySelected={newCurrencySelected}
+              currencySelected={state.currencySelected}
             />
           </Row>
         </Container>&nbsp;&nbsp;

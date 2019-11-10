@@ -36,7 +36,6 @@ export default class ProfitAnalyser {
       profit: Number.MIN_VALUE
     }
     const currency = this.currency;
-    console.log(currency)
     for(let i = 0; i < currency.length; i++){
       for(let j = i+1; j < currency.length; j++){
         if(result['profit']<currency[j]['price']-currency[i]['price'])
