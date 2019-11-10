@@ -26,6 +26,7 @@ const App: React.FC = () => {
   })
 
   const [profit, setProfit] = useState<IProfit>({});
+  const [showBuyDate, setShowBuyDate] = useState<boolean>(false);
 
   useEffect(()=>{
     getCurrencies();
@@ -61,7 +62,10 @@ const App: React.FC = () => {
     data = await data.json();
     setProfit(data)
   }
-
+  // Function for handleing onChange of the Show Buy Date input field
+  const ChangeShowBuyDate = (e: any)=>{
+    setShowBuyDate(e.target.checked)
+  }
   // Function for handleing onChange of the fromDate input field
   const newFromDate = async (e: any)=>{
     setState({...state, fromDate: e.target.value })
@@ -89,6 +93,7 @@ const App: React.FC = () => {
         <Container>
           <Row>
             <DateForm
+              ChangeShowBuyDate={ChangeShowBuyDate}
               newFromDate={newFromDate}
               newToDate={newToDate}
               fromDate={state.fromDate}
@@ -105,6 +110,7 @@ const App: React.FC = () => {
               return(
                 <Col key={i} sm="4">
                   <ProfitTable
+                    showBuyDate={showBuyDate}
                     data={profit[currency]}
                     currency={currency}
                   />

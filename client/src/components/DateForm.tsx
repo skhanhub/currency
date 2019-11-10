@@ -3,7 +3,7 @@ import React from 'react';
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import Select from 'react-select'
-
+import './slider.css'
 
 const customStyles = {
   option: (provided: any) => ({
@@ -49,6 +49,16 @@ const DateForm = (props: any) => {
                 return { value: currency, label: currency }
               })}
             />
+        </Form.Group>
+      </Col>
+      <Col>
+        <Form.Group>
+          <Form.Label style={{fontSize: "2rem"}}>Show Buy Date</Form.Label>
+          {/* <Form.Check type="checkbox" /> */}
+          <label className="switch">
+            <input type="checkbox" onChange={props.ChangeShowBuyDate}/>
+            <span className="slider round"></span>
+          </label>
         </Form.Group>
       </Col>
       </Form.Row>

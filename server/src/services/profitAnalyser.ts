@@ -1,5 +1,15 @@
-'use struct';
 // Class for annalysing profits
+interface Action {
+  date: string;
+  time: string;
+  price: number;
+}
+interface OGetProfit {
+  buy: Action;
+  sell: Action;
+  profit: number;
+}
+
 export default class ProfitAnalyser {
   currency: Array<Object>;
   // Initialise currencies
@@ -19,9 +29,14 @@ export default class ProfitAnalyser {
       }
     }
   */
-  getProfit(): Object{
-    let result = {buy: {}, sell: {}, profit: Number.MIN_VALUE}
+  getProfit(): OGetProfit{
+    let result = {
+      buy: {date: '', time: '', price: 0},
+      sell: {date: '', time: '', price: 0},
+      profit: Number.MIN_VALUE
+    }
     const currency = this.currency;
+    console.log(currency)
     for(let i = 0; i < currency.length; i++){
       for(let j = i+1; j < currency.length; j++){
         if(result['profit']<currency[j]['price']-currency[i]['price'])
@@ -31,10 +46,10 @@ export default class ProfitAnalyser {
             sell: {
               date: currency[j]['date'], time: currency[j]['time'], price: parseFloat(currency[j]['price'])
             },
-            profit: parseFloat(currency[j]['price'])- parseFloat(currency[i]['price'])}
+            profit: (currency[j]['price'])- (currency[i]['price'])}
       }
     }
-
+    // console.log(result)
     return result;
   }
 }

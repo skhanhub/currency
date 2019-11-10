@@ -1,4 +1,12 @@
-'use struct';
+'use strict';
+
+interface OFormatCurrencies {
+  [key: string]: Array<{
+    date: string;
+    time: string;
+    price: number;
+  }>;
+}
 // Class for formatting currency data
 export default class CurrencyDataFormatter {
   currencies: Array<Object>;
@@ -14,7 +22,7 @@ export default class CurrencyDataFormatter {
       <CurrencyName>: [{date: <date>, time: <time>, price: <profit>}]
     }
   */
-  formatCurrencies(): Object{
+  formatCurrencies(): OFormatCurrencies{
     let result = {};
     this.currencies.forEach(currencyDay => {
       currencyDay['quotes'].forEach(currency => {
