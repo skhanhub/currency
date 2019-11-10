@@ -8,7 +8,7 @@ export default class ProfitAnalyser {
   }
   /*
     Function for getting the maximum profit for each currencies
-    The function does not take anty
+    The function does not take any arguments
     The function returns an object containing the best possible buy and sell price that maximises the profit. The object has the following structure
     {
       <CurrencyName>:
