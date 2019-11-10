@@ -27,8 +27,8 @@ describe("Test the CurrencyDataFormatter class", function(){
     let currencyDataFormatter = new CurrencyDataFormatter(currencies);
     let result: Object = currencyDataFormatter.formatCurrencies();
     // Compare the result
-    expect(result['BTC']).to.deep.equal([{date: '20180507', time: '0915', price: '35.5'}, {date: '20180507', time: '1045', price: '38'}]);
-    expect(result['ETC']).to.deep.equal([{date: '20180507', time: '0900', price: '1.45'}, {date: '20180507', time: '1030', price: '1.87'}]);
+    expect(result['BTC']).to.deep.equal([{date: '20180507', time: '0915', price: 35.5}, {date: '20180507', time: '1045', price: 38}]);
+    expect(result['ETC']).to.deep.equal([{date: '20180507', time: '0900', price: 1.45}, {date: '20180507', time: '1030', price: 1.87}]);
   });
 });
 

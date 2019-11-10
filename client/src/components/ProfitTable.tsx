@@ -18,7 +18,10 @@ const ProfitTable = (props: any) => {
             </tr>
             <tr><td>Buy</td><td>Sell</td></tr>
             <tr><td>${props.data.buy.price}</td><td>${props.data.sell.price}</td></tr>
-            <tr><td><Moment format="hh:mma" date={moment(props.data.buy.time, "HHmm")}/></td><td><Moment format="hh:mm a" date={moment(props.data.sell.time, "HHmm")}/></td></tr>
+            <tr>
+              <td><Moment format="hh:mma" date={moment(props.data.buy.time, "HHmm")}/></td>
+              <td><Moment format="hh:mma" date={moment(props.data.sell.time, "HHmm")}/></td>
+            </tr>
             <tr><td colSpan={2}>Profit: ${props.data.profit.toFixed(2)}</td></tr>
           </tbody>
         </Table>:
@@ -28,7 +31,10 @@ const ProfitTable = (props: any) => {
             <tr><th colSpan={2}>{props.currency}</th></tr>
             <tr><td>Buy</td><td>Sell</td></tr>
             <tr><td>${props.data.buy.price}</td><td>${props.data.sell.price}</td></tr>
-            <tr><td><Moment format="hh:mma" date={moment(props.data.buy.time, "HHmm")}/></td><td><Moment format="hh:mm a" date={moment(props.data.sell.time, "HHmm")}/></td></tr>
+            <tr>
+              <td><Moment format="hh:mma" date={moment(props.data.buy.time, "HHmm")}/></td>
+              <td><Moment format="hh:mma" date={moment(props.data.sell.time, "HHmm")}/></td>
+            </tr>
             <tr><td colSpan={2}>Profit: ${props.data.profit.toFixed(2)}</td></tr>
           </tbody>
         </Table>

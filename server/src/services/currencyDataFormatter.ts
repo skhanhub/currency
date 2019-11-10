@@ -27,9 +27,9 @@ export default class CurrencyDataFormatter {
     this.currencies.forEach(currencyDay => {
       currencyDay['quotes'].forEach(currency => {
         if(currencyDay['currency'] in result)
-          result[currencyDay['currency']].push({date: currencyDay['date'], time: currency['time'], price: currency['price']});
+          result[currencyDay['currency']].push({date: currencyDay['date'], time: currency['time'], price: parseFloat(currency['price'])});
         else
-          result[currencyDay['currency']] = [{date: currencyDay['date'], time: currency['time'], price: currency['price']}];
+          result[currencyDay['currency']] = [{date: currencyDay['date'], time: currency['time'], price: parseFloat(currency['price'])}];
       });
     });
     return result;

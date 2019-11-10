@@ -40,10 +40,10 @@ export default class ProfitAnalyser {
       for(let j = i+1; j < currency.length; j++){
         if(result['profit']<currency[j]['price']-currency[i]['price'])
           result ={buy: {
-              date: currency[i]['date'], time: currency[i]['time'], price: parseFloat(currency[i]['price'])
+              date: currency[i]['date'], time: currency[i]['time'], price: (currency[i]['price'])
             },
             sell: {
-              date: currency[j]['date'], time: currency[j]['time'], price: parseFloat(currency[j]['price'])
+              date: currency[j]['date'], time: currency[j]['time'], price: (currency[j]['price'])
             },
             profit: (currency[j]['price'])- (currency[i]['price'])}
       }
