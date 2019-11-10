@@ -1,5 +1,4 @@
-'use struct';
-"use strict";
+'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 // Class for formatting currency data
 var CurrencyDataFormatter = /** @class */ (function () {

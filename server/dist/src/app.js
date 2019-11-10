@@ -42,6 +42,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
 var createError = require("http-errors");
+var logger = require("morgan");
 var configs = require("../config");
 var profits_1 = require("./routes/profits");
 var currencies_1 = require("./routes/currencies");
@@ -50,6 +51,8 @@ var routes_1 = require("./routes");
 var port = 5000;
 // Create the application
 var app = express();
+// use morgan for debugging
+app.use(logger('dev'));
 // Load the configs
 var config = configs[app.get('env')];
 // Set sitename
