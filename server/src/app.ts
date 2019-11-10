@@ -4,6 +4,7 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as path from "path";
 import * as createError from 'http-errors';
+import * as logger from 'morgan';
 import * as configs from "../config";
 import profits from "./routes/profits";
 import currencies from "./routes/currencies";
@@ -13,12 +14,15 @@ import home from "./routes";
 const port = 5000
 // Create the application
 const app = express();
+// use morgan for debugging
+app.use(logger('dev'));
 // Load the configs
 const config = configs[app.get('env')];
 // Set sitename
 app.locals.title = config.sitename;
 // support json encoded bodies
 app.use(bodyParser.json());
+
 // support urlencode
 app.use(bodyParser.urlencoded({ extended: true }));
 // Set the public static folder containing the front end template and logic
